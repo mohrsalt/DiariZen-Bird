@@ -124,6 +124,7 @@ class DiarizationDataset(Dataset):
                             chunk_size,
                             chunk_shift
                     ):
+                        print(ed)
                         self.chunk_indices.append((idx, recaudio, st, ed))      # seconds
 
             except Exception as e:
