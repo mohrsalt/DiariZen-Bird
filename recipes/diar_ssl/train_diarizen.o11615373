@@ -1,0 +1,29 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Resource Usage on 2025-08-17 22:37:13.563020:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	JobId: 11615373.pbs101
+	Project: personal-bhargavi
+	Exit Status: 271
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	NCPUs: Requested(16), Used(16)
+	CPU Time Used: 00:00:00
+	Memory: Requested(110gb), Used(44344kb)
+	Vmem Used: 35996kb
+	Walltime: Requested(02:00:00), Used(00:00:10)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Execution Nodes Used: (x1000c0s7b0n1:ncpus=16:ngpus=1:mem=115343360kb)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	GPU Duration: 13.06secs
+	GPU Power Consumed: 42.63W
+	GPU Max GPU Memory Used: 0.0B
+	Memory Throughput Rate (Average): x1000c0s7b0n1:(gpu3:0%)
+	Memory Throughput Rate (Max): x1000c0s7b0n1:(gpu3:0%)
+	Memory Throughput Rate (Min): x1000c0s7b0n1:(gpu3:0%)
+	GPU SM Utilization (Average): x1000c0s7b0n1:(gpu3:0%)
+	GPU SM Utilization (Max): x1000c0s7b0n1:(gpu3:0%)
+	GPU SM Utilization (Min): x1000c0s7b0n1:(gpu3:0%)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: All GPUs have a percentage of 0 utilisation.
+GPU application profile: Idle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

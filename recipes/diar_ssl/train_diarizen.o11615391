@@ -1,0 +1,59 @@
+stage1: use dual-opt for model training...
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+/home/users/ntu/bhargavi/.conda/envs/diarizen/bin/python3.10: can't open file '/home/users/ntu/bhargavi/run_dual_opt.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/bin/accelerate", line 7, in <module>
+    sys.exit(main())
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1235, in launch_command
+    simple_launcher(args)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/accelerate/commands/launch.py", line 823, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/users/ntu/bhargavi/.conda/envs/diarizen/bin/python3.10', 'run_dual_opt.py', '-C', '/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/conf/wavlm_updated_conformer.toml', '-M', 'train']' returned non-zero exit status 2.
+ls: cannot access '/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/exp/wavlm_updated_conformer/*.toml': No such file or directory
+stage2: model inference...
+du: cannot access '/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/exp/wavlm_updated_conformer/*.log': No such file or directory
+/var/spool/pbs/mom_priv/jobs/11615391.pbs101.SC: line 78: /home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/exp/wavlm_updated_conformer/val_metric_summary.lst: No such file or directory
+python: can't open file '/home/users/ntu/bhargavi/infer_avg.py': [Errno 2] No such file or directory
+stage3: scoring...
+/var/spool/pbs/mom_priv/jobs/11615391.pbs101.SC: line 97: /home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/exp/wavlm_updated_conformer/infer_constrained_AHC_thres_0.70_mcs_30/metric_Loss_best/avg_ckpt5/test/AMI/result_collar0: No such file or directory
+python: can't open file '/home/users/ntu/bhargavi/infer_avg.py': [Errno 2] No such file or directory
+stage3: scoring...
+/var/spool/pbs/mom_priv/jobs/11615391.pbs101.SC: line 97: /home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/exp/wavlm_updated_conformer/infer_constrained_AHC_thres_0.70_mcs_30/metric_Loss_best/avg_ckpt5/test/AliMeeting/result_collar0: No such file or directory
+python: can't open file '/home/users/ntu/bhargavi/infer_avg.py': [Errno 2] No such file or directory
+stage3: scoring...
+/var/spool/pbs/mom_priv/jobs/11615391.pbs101.SC: line 97: /home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/exp/wavlm_updated_conformer/infer_constrained_AHC_thres_0.70_mcs_30/metric_Loss_best/avg_ckpt5/test/AISHELL4/result_collar0: No such file or directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Resource Usage on 2025-08-17 22:49:52.967096:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	JobId: 11615391.pbs101
+	Project: personal-bhargavi
+	Exit Status: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	NCPUs: Requested(16), Used(16)
+	CPU Time Used: 00:00:11
+	Memory: Requested(110gb), Used(703076kb)
+	Vmem Used: 5026448kb
+	Walltime: Requested(02:00:00), Used(00:00:46)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Execution Nodes Used: (x1000c1s6b0n1:ncpus=16:ngpus=1:mem=115343360kb)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	GPU Duration: 47.83secs
+	GPU Power Consumed: 35.22W
+	GPU Max GPU Memory Used: 0.0B
+	Memory Throughput Rate (Average): x1000c1s6b0n1:(gpu1:0%)
+	Memory Throughput Rate (Max): x1000c1s6b0n1:(gpu1:0%)
+	Memory Throughput Rate (Min): x1000c1s6b0n1:(gpu1:0%)
+	GPU SM Utilization (Average): x1000c1s6b0n1:(gpu1:0%)
+	GPU SM Utilization (Max): x1000c1s6b0n1:(gpu1:0%)
+	GPU SM Utilization (Min): x1000c1s6b0n1:(gpu1:0%)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: All GPUs have a percentage of 0 utilisation.
+GPU application profile: Idle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

@@ -1,0 +1,32 @@
+ls: cannot access '/home/users/ntu/bhargavi/DiariZen/recipes/diar_ssl/conf/wavlm_updated_conformer.toml': No such file or directory
+stage1: use dual-opt for model training...
+/home/users/ntu/bhargavi/.conda/envs/diarizen/etc/conda/activate.d/libblas_mkl_activate.sh: line 1: MKL_INTERFACE_LAYER: unbound variable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Resource Usage on 2025-08-17 22:39:41.398698:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	JobId: 11615374.pbs101
+	Project: personal-bhargavi
+	Exit Status: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	NCPUs: Requested(16), Used(16)
+	CPU Time Used: 00:00:01
+	Memory: Requested(110gb), Used(92616kb)
+	Vmem Used: 159388kb
+	Walltime: Requested(02:00:00), Used(00:01:20)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Execution Nodes Used: (x1000c0s7b0n1:ncpus=16:ngpus=1:mem=115343360kb)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	GPU Duration: 1.35mins
+	GPU Power Consumed: 48.01W
+	GPU Max GPU Memory Used: 0.0B
+	Memory Throughput Rate (Average): x1000c0s7b0n1:(gpu3:0%)
+	Memory Throughput Rate (Max): x1000c0s7b0n1:(gpu3:0%)
+	Memory Throughput Rate (Min): x1000c0s7b0n1:(gpu3:0%)
+	GPU SM Utilization (Average): x1000c0s7b0n1:(gpu3:0%)
+	GPU SM Utilization (Max): x1000c0s7b0n1:(gpu3:0%)
+	GPU SM Utilization (Min): x1000c0s7b0n1:(gpu3:0%)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: All GPUs have a percentage of 0 utilisation.
+GPU application profile: Idle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

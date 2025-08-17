@@ -1,0 +1,31 @@
+stage1: use dual-opt for model training...
+/home/users/ntu/bhargavi/.conda/envs/diarizen/etc/conda/activate.d/libblas_mkl_activate.sh: line 1: MKL_INTERFACE_LAYER: unbound variable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Resource Usage on 2025-08-17 22:46:23.037672:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	JobId: 11615386.pbs101
+	Project: personal-bhargavi
+	Exit Status: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	NCPUs: Requested(16), Used(16)
+	CPU Time Used: 00:00:01
+	Memory: Requested(110gb), Used(126652kb)
+	Vmem Used: 161404kb
+	Walltime: Requested(02:00:00), Used(00:01:30)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Execution Nodes Used: (x1000c1s6b0n1:ncpus=16:ngpus=1:mem=115343360kb)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	GPU Duration: 1.55mins
+	GPU Power Consumed: 48.5W
+	GPU Max GPU Memory Used: 0.0B
+	Memory Throughput Rate (Average): x1000c1s6b0n1:(gpu1:0%)
+	Memory Throughput Rate (Max): x1000c1s6b0n1:(gpu1:0%)
+	Memory Throughput Rate (Min): x1000c1s6b0n1:(gpu1:0%)
+	GPU SM Utilization (Average): x1000c1s6b0n1:(gpu1:0%)
+	GPU SM Utilization (Max): x1000c1s6b0n1:(gpu1:0%)
+	GPU SM Utilization (Min): x1000c1s6b0n1:(gpu1:0%)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: All GPUs have a percentage of 0 utilisation.
+GPU application profile: Idle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

@@ -12,8 +12,8 @@ module load miniforge3
 # Licensed under the MIT license.
 # Copyright 2024 Brno University of Technology (author: Jiangyu Han, ihan@fit.vut.cz)
 
-set -eu
-ulimit -n 2048
+#set -eu
+#ulimit -n 2048
 
 # general setup
 stage=1
@@ -60,8 +60,8 @@ if [ $stage -le 1 ]; then
             run_single_opt.py -C $train_conf -M validate
     else
         echo "stage1: use dual-opt for model training..."
-        conda activate diarizen && CUDA_VISIBLE_DEVICES="0,1,2,3" accelerate launch \
-            --num_processes 4 --main_process_port 1134 \
+        conda activate diarizen && CUDA_VISIBLE_DEVICES="0" accelerate launch \
+            --num_processes 1 --main_process_port 1134 \
             run_dual_opt.py -C $train_conf -M train
     fi
 fi
