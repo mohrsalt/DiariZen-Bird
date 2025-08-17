@@ -115,7 +115,7 @@ class DiarizationDataset(Dataset):
 
         
         for idx,recaudio in enumerate(subset["train"]):
-            start_sec, end_sec = 0,len(recaudio["audio"]["array"])/32000   
+            start_sec, end_sec = 0,len(recaudio["audio"]["array"])/16000   
             try:
                 if chunk_size > 0:
                     for st, ed in _gen_chunk_indices(   #see this
@@ -181,7 +181,7 @@ class DiarizationDataset(Dataset):
 
     def extract_wavforms(self, dataarray, num_channels=8):
 
-        data, sample_rate = dataarray,32000
+        data, sample_rate = dataarray,16000
         assert sample_rate == self.sample_rate
         if data.ndim == 1:
             data = data.reshape(1, -1)
