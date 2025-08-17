@@ -1,0 +1,332 @@
+stage1: use dual-opt for model training...
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'DBD-research-group/BirdSet' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Using the latest cached version of the dataset since DBD-research-group/BirdSet couldn't be found on the Hugging Face Hub
+Found the latest cached dataset configuration 'XCM' at /home/users/ntu/bhargavi/scratch/Birdset/DBD-research-group___bird_set/XCM/0.0.4/c6d7d1c30e4d8f29c4fb5e358bc605ccb896681b869398c54db64721f45ac91e (last modified on Sun Jul 27 20:40:17 2025).
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'DBD-research-group/BirdSet' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Using the latest cached version of the dataset since DBD-research-group/BirdSet couldn't be found on the Hugging Face Hub
+Found the latest cached dataset configuration 'POW' at /home/users/ntu/bhargavi/scratch/Birdset/DBD-research-group___bird_set/POW/0.0.4/c6d7d1c30e4d8f29c4fb5e358bc605ccb896681b869398c54db64721f45ac91e (last modified on Sun Aug 17 18:54:37 2025).
+08-17 23:07:37: Initialized logger with log file in /home/users/ntu/bhargavi/scratch/diarizen/wavlm_updated_conformer.
+08-17 23:07:38: Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Un-matched recording
+Traceback (most recent call last):
+  File "/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/run_dual_opt.py", line 169, in <module>
+    run(config, args.resume)
+  File "/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/run_dual_opt.py", line 94, in run
+    train_dataset = instantiate(config["train_dataset"]["path"], args=train_dataset_config)
+  File "/home/users/ntu/bhargavi/Diarizen/diarizen/utils.py", line 130, in instantiate
+    return class_or_function(**args)
+  File "/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/dataset.py", line 117, in __init__
+    for idx,recaudio in enumerate(subset["train"]):
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/arrow_dataset.py", line 2466, in __iter__
+    formatted_output = format_table(
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/formatting/formatting.py", line 657, in format_table
+    return formatter(pa_table, query_type=query_type)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/formatting/formatting.py", line 410, in __call__
+    return self.format_row(pa_table)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/formatting/formatting.py", line 459, in format_row
+    row = self.python_features_decoder.decode_row(row)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/formatting/formatting.py", line 223, in decode_row
+    return self.features.decode_example(row, token_per_repo_id=self.token_per_repo_id) if self.features else row
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/features/features.py", line 2092, in decode_example
+    return {
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/features/features.py", line 2093, in <dictcomp>
+    column_name: decode_nested_example(feature, value, token_per_repo_id=token_per_repo_id)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/features/features.py", line 1405, in decode_nested_example
+    return schema.decode_example(obj, token_per_repo_id=token_per_repo_id) if obj is not None else None
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/datasets/features/audio.py", line 182, in decode_example
+    audio = AudioDecoder(path, stream_index=self.stream_index, sample_rate=self.sampling_rate)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/torchcodec/decoders/_audio_decoder.py", line 62, in __init__
+    self._decoder = create_decoder(source=source, seek_mode="approximate")
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/torchcodec/decoders/_decoder_utils.py", line 27, in create_decoder
+    return core.create_from_file(source, seek_mode)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/torch/_ops.py", line 829, in __call__
+    return self._op(*args, **kwargs)
+RuntimeError: Could not open input file: /home/users/ntu/bhargavi/scratch/hub/datasets--DBD-research-group--BirdSet/snapshots/ee31c6ba7dd653e57bf327bdd0c1bde6b0334bba/XCM/extracted/XCM_shard_0007.tar.gz/XC108663.ogg No such file or directory
+Traceback (most recent call last):
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/bin/accelerate", line 7, in <module>
+    sys.exit(main())
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1235, in launch_command
+    simple_launcher(args)
+  File "/home/users/ntu/bhargavi/.conda/envs/diarizen/lib/python3.10/site-packages/accelerate/commands/launch.py", line 823, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/users/ntu/bhargavi/.conda/envs/diarizen/bin/python3.10', 'run_dual_opt.py', '-C', '/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl/conf/wavlm_updated_conformer.toml', '-M', 'train']' returned non-zero exit status 1.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Resource Usage on 2025-08-17 23:19:06.600674:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	JobId: 11615428.pbs101
+	Project: personal-bhargavi
+	Exit Status: 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	NCPUs: Requested(16), Used(16)
+	CPU Time Used: 00:02:59
+	Memory: Requested(110gb), Used(6698844kb)
+	Vmem Used: 21630404kb
+	Walltime: Requested(02:00:00), Used(00:13:38)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Execution Nodes Used: (x1000c1s1b0n1:ncpus=16:ngpus=1:mem=115343360kb)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	GPU Duration: 13.68mins
+	GPU Power Consumed: 57.21W
+	GPU Max GPU Memory Used: 838.0MB
+	Memory Throughput Rate (Average): x1000c1s1b0n1:(gpu3:0%)
+	Memory Throughput Rate (Max): x1000c1s1b0n1:(gpu3:0%)
+	Memory Throughput Rate (Min): x1000c1s1b0n1:(gpu3:0%)
+	GPU SM Utilization (Average): x1000c1s1b0n1:(gpu3:0%)
+	GPU SM Utilization (Max): x1000c1s1b0n1:(gpu3:0%)
+	GPU SM Utilization (Min): x1000c1s1b0n1:(gpu3:0%)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: All GPUs have a percentage of 0 utilisation.
+GPU application profile: Idle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
