@@ -126,8 +126,8 @@ class DiarizationDataset(Dataset):
                     ):
                         self.chunk_indices.append((idx, recaudio, st, ed))      # seconds
 
-            except:
-                print(f'Un-matched recording')
+            except Exception as e:
+                print(e)
                 
         self.annotations = self.annotations(subset["train"])
 
