@@ -17,7 +17,7 @@ ulimit -n 2048
 
 # general setup
 stage=1
-recipe_root=/home/users/ntu/bhargavi/DiariZen/recipes/diar_ssl
+recipe_root=/home/users/ntu/bhargavi/Diarizen/recipes/diar_ssl
 exp_root=$recipe_root/exp
 conf_dir=$recipe_root/conf
 
