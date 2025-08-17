@@ -124,7 +124,7 @@ class DiarizationDataset(Dataset):
                             chunk_size,
                             chunk_shift
                     ):
-                        print(ed)
+                        
                         self.chunk_indices.append((idx, recaudio, st, ed))      # seconds
 
             except Exception as e:
@@ -139,6 +139,7 @@ class DiarizationDataset(Dataset):
         '''
         SPEAKER train100_306 1 15.71 1.76 <NA> <NA> 5456 <NA> <NA>
         '''
+        print("annotating")
         annotations = []
         session_lst = []
         for idx,audio in enumerate(dataset):
