@@ -36,17 +36,7 @@ def get_dtype(value: int) -> str:
         return "i8"  # signed long (64 bits)
     return filtered_list[0][1]
 
-def load_scp(scp_file: str) -> Dict[str, str]:
-    """ return dictionary { rec: wav_rxfilename } """
-    lines = [line.strip().split(None, 1) for line in open(scp_file)]
-    return {x[0]: x[1] for x in lines}
 
-def load_uem(uem_file: str) -> Dict[str, float]:
-    """ returns dictionary { recid: duration }  """
-    if not os.path.exists(uem_file):
-        return None
-    lines = [line.strip().split() for line in open(uem_file)]
-    return {x[0]: [float(x[-2]), float(x[-1])] for x in lines}
     
 def _gen_chunk_indices(
     init_posi: int,
@@ -63,7 +53,7 @@ def _gen_chunk_indices(
     for i in range(num_chunks):
         yield init_posi + (i * step), init_posi + (i * step) + size
 
-def _collate_fn(batch, max_speakers_per_chunk=4) -> torch.Tensor:
+def _collate_fn(batch, max_speakers_per_chunk=1) -> torch.Tensor:
     collated_x = []
     collated_y = []
     collated_names = []
@@ -101,9 +91,6 @@ def _collate_fn(batch, max_speakers_per_chunk=4) -> torch.Tensor:
 class DiarizationDataset(Dataset):
     def __init__(
         self, 
-        scp_file: str, 
-        rttm_file: str,
-        uem_file: str,
         model_num_frames: int,    # default: wavlm_base
         model_rf_duration: float,  # model.receptive_field.duration, seconds
         model_rf_step: float,  # model.receptive_field.step, seconds
@@ -118,68 +105,58 @@ class DiarizationDataset(Dataset):
         self.model_rf_step = model_rf_step
         self.model_rf_duration = model_rf_duration
         self.model_num_frames = model_num_frames
+
         
-        self.rec_scp = load_scp(scp_file)
-        self.reco2dur = load_uem(uem_file)
-        
-        for rec, dur_info in self.reco2dur.items():
-            start_sec, end_sec = dur_info   
+        for idx,recaudio in enumerate(XCM["train"]):
+            start_sec, end_sec = 0,len(recaudio["audio"]["array"])/32000   
             try:
                 if chunk_size > 0:
-                    for st, ed in _gen_chunk_indices(
+                    for st, ed in _gen_chunk_indices(   #see this
                             start_sec,
                             end_sec,
                             chunk_size,
                             chunk_shift
                     ):
-                        self.chunk_indices.append((rec, self.rec_scp[rec], st, ed))      # seconds
-                else:
-                    self.chunk_indices.append((rec, self.rec_scp[rec], start_sec, end_sec))
-            except:
-                print(f'Un-matched recording: {rec}')
-                
-        self.annotations = self.rttm2label(rttm_file)
+                        self.chunk_indices.append((idx, recaudio, st, ed))      # seconds
 
-    def get_session_idx(self, session):
-        """
-        convert session to session idex
-        """
-        session_keys = list(self.rec_scp.keys())
-        return session_keys.index(session)
-            
-    def rttm2label(self, rttm_file):
+            except:
+                print(f'Un-matched recording')
+                
+        self.annotations = self.annotations(XCM["train"])
+
+
+    
+
+    def annotations(self, dataset):
         '''
         SPEAKER train100_306 1 15.71 1.76 <NA> <NA> 5456 <NA> <NA>
         '''
         annotations = []
         session_lst = []
-        with open(rttm_file, 'r') as file:
-            for seg_idx, line in enumerate(file):   
-                line = line.split()
-                session, start, dur = line[1], line[3], line[4]
+        for idx,audio in enumerate(dataset):
+            for eventidx,event in enumerate(audio["detected_events"]):
 
-                start = float(start)
-                end = start + float(dur)
-                spk = line[-2] if line[-2] != "<NA>" else line[-3]
-                
-                # new nession
+                session=idx
+                start=event[0]
+                end=event[1]
+                spk=1
                 if session not in session_lst:      
                     unique_label_lst = []
                     session_lst.append(session)
-                    
+
                 if spk not in unique_label_lst:
                     unique_label_lst.append(spk)
-                    
                 label_idx = unique_label_lst.index(spk)
-                
+
                 annotations.append(
                     (
-                        self.get_session_idx(session),
+                        session,
                         start,
                         end,
                         label_idx
-                    )
-                )
+                    ))
+                
+
                 
         segment_dtype = [
             (
@@ -192,11 +169,12 @@ class DiarizationDataset(Dataset):
         ]
         
         return np.array(annotations, dtype=segment_dtype)
+            
 
-    def extract_wavforms(self, path, start, end, num_channels=8):
-        start = int(start * self.sample_rate)
-        end = int(end * self.sample_rate)
-        data, sample_rate = sf.read(path, start=start, stop=end)
+
+    def extract_wavforms(self, dataarray, num_channels=8):
+
+        data, sample_rate = dataarray,32000
         assert sample_rate == self.sample_rate
         if data.ndim == 1:
             data = data.reshape(1, -1)
@@ -208,11 +186,11 @@ class DiarizationDataset(Dataset):
         return len(self.chunk_indices)
     
     def __getitem__(self, idx):
-        session, path, chunk_start, chunk_end = self.chunk_indices[idx]
-        data = self.extract_wavforms(path, chunk_start, chunk_end)          # [start, end)
+        session, dataarray, chunk_start, chunk_end = self.chunk_indices[idx]
+        data = self.extract_wavforms(dataarray)          # [start, end)
         
         # chunked annotations
-        session_idx = self.get_session_idx(session)
+        session_idx = session
         annotations_session = self.annotations[self.annotations['session_idx'] == session_idx]
         chunked_annotations = annotations_session[
             (annotations_session["start"] < chunk_end) & (annotations_session["end"] > chunk_start)
