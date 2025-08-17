@@ -16,6 +16,29 @@ from diarizen.ckpt_utils import average_ckpt
 
 from dataset import _collate_fn
 from functools import partial
+import librosa
+import librosa.display
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import soundfile as sf
+import datasets
+from datasets import Audio
+
+XCM = datasets.load_dataset(
+    name="XCM",
+    path='DBD-research-group/BirdSet',
+    trust_remote_code=True,
+    cache_dir='/home/users/ntu/bhargavi/scratch/Birdset'
+)
+XCM = XCM.cast_column("audio", Audio(sampling_rate=16000))
+
+POW = datasets.load_dataset(
+    name="POW",
+    path='DBD-research-group/BirdSet',
+    trust_remote_code=True,
+    cache_dir='/home/users/ntu/bhargavi/scratch/Birdset'
+)
+POW = POW.cast_column("audio", Audio(sampling_rate=16000))
 
 def run(config, resume):
     init_logging_logger(config)
@@ -55,12 +78,13 @@ def run(config, resume):
     train_dataset_config["model_num_frames"] = model_num_frames
     train_dataset_config["model_rf_duration"] = model_rf_duration
     train_dataset_config["model_rf_step"] = model_rf_step
-
+    train_dataset_config["subset"]=XCM
+    
     validate_dataset_config = config["validate_dataset"]["args"]
     validate_dataset_config["model_num_frames"] = model_num_frames
     validate_dataset_config["model_rf_duration"] = model_rf_duration
     validate_dataset_config["model_rf_step"] = model_rf_step
-
+    validate_dataset_config["subset"]=POW
     collate_fn_partial = partial(
         _collate_fn, 
         max_speakers_per_chunk=config["model"]["args"]["max_speakers_per_chunk"]

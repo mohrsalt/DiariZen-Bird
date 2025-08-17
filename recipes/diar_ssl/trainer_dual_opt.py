@@ -58,6 +58,7 @@ class Trainer(BaseTrainer):
         
         # skip batch if something went wrong for some reason
         if torch.isnan(loss):
+            print("loss is nan somehow ugh")
             return None
         
         self.accelerator.backward(loss)

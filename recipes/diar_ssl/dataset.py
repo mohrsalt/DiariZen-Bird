@@ -12,6 +12,11 @@ from typing import Dict
 
 from torch.utils.data import Dataset
 
+
+
+
+
+
 def get_dtype(value: int) -> str:
     """Return the most suitable type for storing the
     value passed in parameter in memory.
@@ -91,12 +96,14 @@ def _collate_fn(batch, max_speakers_per_chunk=1) -> torch.Tensor:
 class DiarizationDataset(Dataset):
     def __init__(
         self, 
+        subset,
         model_num_frames: int,    # default: wavlm_base
         model_rf_duration: float,  # model.receptive_field.duration, seconds
         model_rf_step: float,  # model.receptive_field.step, seconds
         chunk_size: int = 5,  # seconds
         chunk_shift: int = 5, # seconds
         sample_rate: int = 16000
+        
     ): 
         self.chunk_indices = []
         
@@ -107,7 +114,7 @@ class DiarizationDataset(Dataset):
         self.model_num_frames = model_num_frames
 
         
-        for idx,recaudio in enumerate(XCM["train"]):
+        for idx,recaudio in enumerate(subset["train"]):
             start_sec, end_sec = 0,len(recaudio["audio"]["array"])/32000   
             try:
                 if chunk_size > 0:
@@ -122,7 +129,7 @@ class DiarizationDataset(Dataset):
             except:
                 print(f'Un-matched recording')
                 
-        self.annotations = self.annotations(XCM["train"])
+        self.annotations = self.annotations(subset["train"])
 
 
     

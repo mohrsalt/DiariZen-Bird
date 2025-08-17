@@ -1,5 +1,5 @@
 [meta]
-save_dir = "exp"
+save_dir = "/home/users/ntu/bhargavi/scratch/diarizen"
 seed = 3407
 
 [finetune]
@@ -34,7 +34,7 @@ lr = 1e-3
 [model]
 path = "diarizen.models.eend.model_wavlm_conformer.Model"
 [model.args]
-wavlm_src = "/YOUR_PATH/WavLM-Base+.pt"
+wavlm_src = "/home/users/ntu/bhargavi/scratch/wavlmlocal/wavlm_base_loaded-converted.bin"
 wavlm_layer_num = 13
 wavlm_feat_dim = 768
 attention_in = 256
@@ -46,17 +46,15 @@ chunk_size = 8
 use_posi = false
 output_activate_function = false
 selected_channel = 0
-max_speakers_per_chunk = 4
+max_speakers_per_chunk = 1
 
 [train_dataset]
 path = "dataset.DiarizationDataset"
 [train_dataset.args]
-scp_file = "data/AMI_AliMeeting_AISHELL4/train/wav.scp"
-rttm_file = "data/AMI_AliMeeting_AISHELL4/train/rttm"
-uem_file = "data/AMI_AliMeeting_AISHELL4/train/all.uem"
+
 chunk_size = 8
 chunk_shift = 6
-sample_rate = 16000
+sample_rate = 32000
 
 [train_dataset.dataloader]
 batch_size = 16
@@ -67,12 +65,10 @@ pin_memory = true
 [validate_dataset]
 path = "dataset.DiarizationDataset"
 [validate_dataset.args]
-scp_file = "data/AMI_AliMeeting_AISHELL4/dev/wav.scp"
-rttm_file = "data/AMI_AliMeeting_AISHELL4/dev/rttm"
-uem_file = "data/AMI_AliMeeting_AISHELL4/dev/all.uem"
+
 chunk_size = 8
 chunk_shift = 8
-sample_rate = 16000
+sample_rate = 32000
 
 [validate_dataset.dataloader]
 batch_size = 8

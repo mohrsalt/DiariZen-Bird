@@ -1,4 +1,13 @@
 #!/bin/bash
+# Exercise 2 submission script - submit.sh
+# Below, is the queue
+#PBS -q normal
+#PBS -j oe
+#PBS -l select=1:ncpus=16:ngpus=1
+#PBS -l walltime=02:00:00
+#PBS -N train_diarizen
+module load miniforge3
+
 
 # Licensed under the MIT license.
 # Copyright 2024 Brno University of Technology (author: Jiangyu Han, ihan@fit.vut.cz)
@@ -8,7 +17,7 @@ ulimit -n 2048
 
 # general setup
 stage=1
-recipe_root=/YOUR_PATH/DiariZen/recipes/diar_ssl
+recipe_root=/home/users/ntu/bhargavi/DiariZen/recipes/diar_ssl
 exp_root=$recipe_root/exp
 conf_dir=$recipe_root/conf
 
@@ -39,7 +48,7 @@ val_mode=best   # [prev, best, center]
 # scoring setup
 collar=0
 REF_DIR=$data_dir
-dscore_dir=/YOUR_PATH/DiariZen/dscore
+dscore_dir=/home/users/ntu/bhargavi/DiariZen/dscore
 
 # =======================================
 # =======================================
